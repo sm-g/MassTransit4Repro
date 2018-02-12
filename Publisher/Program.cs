@@ -45,15 +45,12 @@ namespace Publisher
                 {
                     x.ExchangeType = RabbitMQ.Client.ExchangeType.Direct;
                 });
-
-                // interface - no RoutingKey
+                                
                 cfg.Send<IOperationARequested>(x =>
                 {
                     x.UseRoutingKeyFormatter(context => Configuration.OperationARoutingKey);
-                });
-
-                // class - OK
-                cfg.Send<OperationBRequestedEvent>(x =>
+                });                
+                cfg.Send<IOperationBRequested>(x =>
                 {
                     x.UseRoutingKeyFormatter(context => context.Message.Username);
                 });

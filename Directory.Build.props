@@ -52,19 +52,19 @@
     <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
     <PackageReference Include="Serilog.Formatting.Compact" Version="1.0.0" />
     <PackageReference Include="MassTransit">
-      <Version>4.1.0.1406-develop</Version>
+      <Version>4.1.0.1411-develop</Version>
     </PackageReference>
     <PackageReference Include="Automatonymous">
       <Version>3.6.2</Version>
     </PackageReference>
     <PackageReference Include="MassTransit.Automatonymous">
-      <Version>4.1.0.1406-develop</Version>
+      <Version>4.1.0.1411-develop</Version>
     </PackageReference>
     <PackageReference Include="MassTransit.RabbitMQ">
-      <Version>4.1.0.1406-develop</Version>
+      <Version>4.1.0.1411-develop</Version>
     </PackageReference>
     <PackageReference Include="MassTransit.SerilogIntegration">
-      <Version>4.1.0.1406-develop</Version>
+      <Version>4.1.0.1411-develop</Version>
     </PackageReference>
     <PackageReference Include="Topshelf">
       <Version>4.1.0.117-develop</Version>
