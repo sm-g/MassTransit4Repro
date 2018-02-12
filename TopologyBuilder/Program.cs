@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 using MassTransit;
+using Messages;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace TopologyBuilder
@@ -64,7 +65,7 @@ namespace TopologyBuilder
                 {
                     e.BindMessageExchanges = false;
 
-                    e.Bind("Messages:IOperationBRequested", s =>
+                    e.Bind<IOperationBRequested>( s =>
                     {
                         s.RoutingKey = username;
                         s.ExchangeType = RabbitMQ.Client.ExchangeType.Direct;

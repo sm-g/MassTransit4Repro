@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Common;
 using GreenPipes;
 using MassTransit;
+using Messages;
 using Microsoft.Extensions.Logging;
 using Topshelf;
 
@@ -46,9 +47,8 @@ namespace Consumer
                     e.Consumer<SimpleConsumer>();
 
                     e.BindMessageExchanges = false;
-
-                    // TODO generate exchange name
-                    e.Bind("Messages:IOperationARequested", s =>
+                    
+                    e.Bind<IOperationARequested>(s =>
                     {
                         s.RoutingKey = Configuration.OperationARoutingKey;
                         s.ExchangeType = RabbitMQ.Client.ExchangeType.Direct;
@@ -63,9 +63,8 @@ namespace Consumer
                     e.Consumer<SimpleConsumer>();
 
                     e.BindMessageExchanges = false;
-
-                    // TODO generate exchange name
-                    e.Bind("Messages:IOperationBRequested", s =>
+                    
+                    e.Bind<IOperationBRequested>(s =>
                     {
                         s.RoutingKey = "user1";
                         s.ExchangeType = RabbitMQ.Client.ExchangeType.Direct;
